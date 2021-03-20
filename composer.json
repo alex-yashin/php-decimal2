@@ -1,0 +1,24 @@
+{
+  "name": "alex-yashin/php-decimal2",
+  "keywords": ["php", "decimal"],
+  "description": "",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alex Yashin",
+      "email": "alex@alex-yashin.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "6.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Decimal2\\": "src/"
+    }
+  }
+}
