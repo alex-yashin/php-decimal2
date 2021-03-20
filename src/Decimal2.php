@@ -132,7 +132,7 @@ class Decimal2
      * @param float $value
      * @return Decimal2
      */
-    public function divFloat($value)
+    public function divFloat($value): Decimal2
     {
         return static::makeByValue($this->value / $value);
     }
@@ -142,7 +142,7 @@ class Decimal2
      * @param Decimal2 $value
      * @return float
      */
-    public function divToFloat($value)
+    public function divToFloat($value): float
     {
         return $this->value / $value->value;
     }
@@ -150,9 +150,9 @@ class Decimal2
     /**
      * 
      * @param Decimal2 $value
-     * @return boolean
+     * @return bool
      */
-    public function isDivisibleBy(Decimal2 $value)
+    public function isDivisibleBy(Decimal2 $value): bool
     {
         return empty($this->value % $value->value);
     }
@@ -172,7 +172,7 @@ class Decimal2
      * @param Decimal2 $dec
      * @return bool
      */
-    public function equal(Decimal2 $dec)
+    public function equal(Decimal2 $dec): bool
     {
         return $this->value == $dec->value;
     }
@@ -182,7 +182,7 @@ class Decimal2
      * @param Decimal2 $dec
      * @return bool
      */
-    public function notEqual(Decimal2 $dec)
+    public function notEqual(Decimal2 $dec): bool
     {
         return $this->value != $dec->value;
     }
@@ -192,7 +192,7 @@ class Decimal2
      * @param Decimal2 $dec
      * @return bool
      */
-    public function greaterThan(Decimal2 $dec)
+    public function greaterThan(Decimal2 $dec): bool
     {
         return $this->value > $dec->value;
     }
@@ -202,7 +202,7 @@ class Decimal2
      * @param Decimal2 $dec
      * @return bool
      */
-    public function greaterOrEqual(Decimal2 $dec)
+    public function greaterOrEqual(Decimal2 $dec): bool
     {
         return $this->value >= $dec->value;
     }
@@ -212,7 +212,7 @@ class Decimal2
      * @param Decimal2 $dec
      * @return bool
      */
-    public function lessThan(Decimal2 $dec)
+    public function lessThan(Decimal2 $dec): bool
     {
         return $this->value < $dec->value;
     }
@@ -222,7 +222,7 @@ class Decimal2
      * @param Decimal2 $dec
      * @return bool
      */
-    public function lessOrEqual(Decimal2 $dec)
+    public function lessOrEqual(Decimal2 $dec): bool
     {
         return $this->value <= $dec->value;
     }
@@ -231,7 +231,7 @@ class Decimal2
      *
      * @return Decimal2
      */
-    public function abs()
+    public function abs(): Decimal2
     {
         return static::makeByValue(abs($this->value));
     }
@@ -240,7 +240,7 @@ class Decimal2
      *
      * @return Decimal2
      */
-    public function floor()
+    public function floor(): Decimal2
     {
         return new Decimal2($this->floorToInt());
     }
@@ -249,7 +249,7 @@ class Decimal2
      *
      * @return Decimal2
      */
-    public function ceil()
+    public function ceil(): Decimal2
     {
         return new Decimal2($this->ceilToInt());
     }
@@ -258,7 +258,7 @@ class Decimal2
      *
      * @return Decimal2
      */
-    public function round()
+    public function round(): Decimal2
     {
         return new Decimal2($this->roundToInt());
     }
@@ -267,7 +267,7 @@ class Decimal2
      *
      * @return int
      */
-    public function floorToInt()
+    public function floorToInt(): int
     {
         return intval(floor($this->value / pow(10, self::DECIMALS)));
     }
@@ -276,7 +276,7 @@ class Decimal2
      *
      * @return int
      */
-    public function ceilToInt()
+    public function ceilToInt(): int
     {
         return intval(ceil($this->value / pow(10, self::DECIMALS)));
     }
@@ -285,7 +285,7 @@ class Decimal2
      *
      * @return int
      */
-    public function roundToInt()
+    public function roundToInt(): int
     {
         return intval(round($this->value / pow(10, self::DECIMALS)));
     }
@@ -296,7 +296,7 @@ class Decimal2
      * @param Decimal2 $dec2
      * @return Decimal2
      */
-    public static function min(Decimal2 $dec1, Decimal2 $dec2)
+    public static function min(Decimal2 $dec1, Decimal2 $dec2): Decimal2
     {
         return static::makeByValue(min($dec1->value, $dec2->value));
     }
@@ -307,7 +307,7 @@ class Decimal2
      * @param Decimal2 $dec2
      * @return Decimal2
      */
-    public static function max(Decimal2 $dec1, Decimal2 $dec2)
+    public static function max(Decimal2 $dec1, Decimal2 $dec2): Decimal2
     {
         return static::makeByValue(max($dec1->value, $dec2->value));
     }
