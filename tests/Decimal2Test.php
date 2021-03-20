@@ -65,8 +65,8 @@ class DecimalTest extends TestCase
         $this->assertSame('3.00', $dec2->div($dec1)->add($dec1)->ceil()->toString());
         $this->assertSame('0.01', (new Decimal2(1))->div(new Decimal2(100))->toString());
 
-        $this->assertSame(2, $dec2->divToFloat($dec1));
-        $this->assertSame(1, $dec2->divToFloat($dec2));
+        $this->assertSame(2.0, $dec2->divToFloat($dec1));
+        $this->assertSame(1.0, $dec2->divToFloat($dec2));
     }
 
     public function testNegativeValues()
