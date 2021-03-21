@@ -45,7 +45,7 @@ class Decimal2
      */
     private static function makeByValue(int $value): Decimal2
     {
-        $dec = new Decimal2();
+        $dec = new static();
         $dec->setValue($value);
         return $dec;
     }
