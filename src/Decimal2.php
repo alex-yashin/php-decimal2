@@ -242,7 +242,7 @@ class Decimal2
      */
     public function floor(): Decimal2
     {
-        return new Decimal2($this->floorToInt());
+        return new static($this->floorToInt());
     }
 
     /**
@@ -251,7 +251,7 @@ class Decimal2
      */
     public function ceil(): Decimal2
     {
-        return new Decimal2($this->ceilToInt());
+        return new static($this->ceilToInt());
     }
 
     /**
@@ -260,7 +260,7 @@ class Decimal2
      */
     public function round(): Decimal2
     {
-        return new Decimal2($this->roundToInt());
+        return new static($this->roundToInt());
     }
 
     /**
