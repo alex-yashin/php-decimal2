@@ -313,7 +313,7 @@ class Decimal2
     }
 
     /**
-     *
+     * Преобразует в строку
      * @return string
      */
     public function toString(): string
@@ -323,6 +323,15 @@ class Decimal2
             $str = '-' . $str;
         }
         return substr($str, 0, strlen($str) - self::DECIMALS) . '.' . substr($str, -self::DECIMALS);
+    }
+
+    /**
+     * Преобразует в строку
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toString();
     }
 
 }
