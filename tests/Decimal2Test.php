@@ -17,7 +17,6 @@ class DecimalTest extends TestCase
         $this->assertSame('0.50', $dec1->div($dec2)->toString());
         $this->assertSame('2.00', $dec2->div($dec1)->toString());
 
-        $this->assertSame('0.43', $dec1->addFloat(0.3333333)->toString());
         $this->assertSame('0.03', $dec1->mulFloat(0.3333333)->toString());
         $this->assertSame('0.30', $dec1->divFloat(0.3333333)->toString());
 

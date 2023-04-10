@@ -67,32 +67,12 @@ class Decimal2
 
     /**
      *
-     * @param float $value
-     * @return Decimal2
-     */
-    public function addFloat($value): Decimal2
-    {
-        return static::makeByValue($this->value + intval($value * pow(10, self::DECIMALS)));
-    }
-
-    /**
-     *
      * @param Decimal2 $value
      * @return Decimal2
      */
     public function sub(Decimal2 $value): Decimal2
     {
         return static::makeByValue($this->value - $value->value);
-    }
-
-    /**
-     *
-     * @param float $value
-     * @return Decimal2
-     */
-    public function subFloat($value): Decimal2
-    {
-        return static::makeByValue($this->value - intval($value * pow(10, self::DECIMALS)));
     }
 
     /**
