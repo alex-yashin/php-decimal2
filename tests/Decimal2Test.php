@@ -82,6 +82,12 @@ class DecimalTest extends TestCase
 
         $this->assertSame('-0.30', $dec1->add($dec2)->toString());
         $this->assertSame('0.10', $dec1->sub($dec2)->toString());
+
+        $dec1 = new Decimal2("-47.78");
+        $this->assertSame('-47.78', $dec1->toString());
+
+        $dec1 = new Decimal2("-47.782");
+        $this->assertSame('-47.78', $dec1->toString());
     }
 
 }

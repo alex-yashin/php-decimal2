@@ -18,9 +18,20 @@ class Decimal2
     public function __construct($value = 0)
     {
         if (is_string($value) && strpos($value, '.')) {
-            list($l, $r) = explode('.', $value, 2);
-            $r = strlen($r) > 2 ? substr($r, 0, 2) : str_pad($r, 2, '0');
-            $this->value = (int)$l * (10 ** self::DECIMALS) + intval($r);
+            $matches = [];
+            if (preg_match('/(-)?(\d+)\.(\d*)/si', $value, $matches)) {
+                $sign = $matches[1];
+                $l = $matches[2];
+                $r = $matches[3];
+
+                $r = strlen($r) > 2 ? substr($r, 0, 2) : str_pad($r, 2, '0');
+                $this->value = intval($l * (10 ** self::DECIMALS)) + intval($r);
+                if ($sign == '-') {
+                   $this->value *= -1;
+                }
+            } else {
+                throw new RuntimeException('Wrong initial data');
+            }
         } elseif (is_string($value)) {
             $this->value = (int)$value * (10 ** self::DECIMALS);
         } elseif (is_int($value)) {
@@ -31,9 +42,6 @@ class Decimal2
             $this->value = 0;
         } else {
             throw new RuntimeException('Wrong initial data');
-        }
-        if (is_string($value) && (strncmp($value, '-', 1) === 0)) {
-            $this->value *= -1;
         }
 
     }
