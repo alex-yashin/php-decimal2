@@ -122,7 +122,7 @@ class Decimal2
      */
     public function divFloat($value): Decimal2
     {
-        return static::makeByValue($this->value / $value);
+        return static::makeByValue(intval($this->value / $value));
     }
     
     /**
